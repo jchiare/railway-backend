@@ -24,8 +24,3 @@ Backend that powers the frontend to analyze messages
 
 - Run in production using `npm run start` after building
 - Run in dev using `npm run dev`
-
-bash
-Copy code
-npm start
-The server will start running on http://localhost:3000.
