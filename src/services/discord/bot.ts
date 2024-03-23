@@ -1,5 +1,6 @@
 import { Client, Events, GatewayIntentBits, Message } from "discord.js";
-import type { DiscordMessage } from "./message";
+import { DiscordMessage } from "./message";
+import type { Response } from "express";
 
 export class DiscordBot {
   private client: Client;
@@ -12,19 +13,19 @@ export class DiscordBot {
         GatewayIntentBits.GuildMessages
       ]
     });
-    this.initialize();
   }
 
-  private initialize(): void {
+  public initialize(): void {
     this.client.once(Events.ClientReady, readyClient => {
       console.log(`Ready! Logged in as ${readyClient.user.tag}`);
     });
     this.client.login(this.token);
   }
 
-  public handleStreamMessage(handler: DiscordMessage): void {
+  public handleStreamMessage(res: Response): void {
+    const disordMessageHandler = new DiscordMessage(res);
     this.client.on("messageCreate", (message: Message) => {
-      handler.handleStream(message);
+      disordMessageHandler.handleStream(message);
     });
   }
 }
