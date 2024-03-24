@@ -6,6 +6,7 @@ Backend that powers the frontend to analyze messages
 
 - Real-time streaming of messages using Server-Sent Events (SSE).
 - Integration with Discord to receive and process messages.
+- Uses LLM to determine category of message
 
 ## TODO
 
