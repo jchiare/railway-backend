@@ -11,7 +11,7 @@ app.use(express.json());
 
 app.use(streamMessagesRouter);
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   // Might make sense to give discordBot it's own server, fine for now
   discordBot.initialize();
