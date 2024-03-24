@@ -17,7 +17,7 @@ Backend that powers the frontend to analyze messages
 ### Prerequisites
 
 - Have NodeJS installed
-- Create a `.env` file with your discord token
+- Create a `.env` file with your discord token (look at `.env.sample` for references)
 - Install dependencies `npm i`
 - Transpile Typescript to Javascript `npm build`
 
